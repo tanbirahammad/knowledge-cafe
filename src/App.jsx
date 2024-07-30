@@ -4,20 +4,18 @@ import './App.css'
 import Blogs from './components/blogs/Blogs'
 import Header from './components/header/Header'
 import { useEffect } from 'react'
+import Bookmarks from './components/bookmarks/Bookmarks'
 
 function App() {
-  const[blogs,setBlogs]=useState([])
-
-  useEffect(()=>{
-    fetch('blogs.json')
-    .then(res=>res.json())
-    .then(data=>setBlogs(data))
-  },[])
+ 
 
   return (
     <>
      <Header/>
+     <div className='md:flex'>
      <Blogs/>
+     <Bookmarks/>
+     </div>
     </>
   )
 }
