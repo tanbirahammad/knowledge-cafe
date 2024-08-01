@@ -11,10 +11,12 @@ function App() {
 
   return (
     <>
+     <div className='max-w-7xl mx-auto'>
      <Header/>
-     <div className='md:flex'>
+     <div className='md:flex mx-auto'>
      <Blogs/>
      <Bookmarks/>
+     </div>
      </div>
     </>
   )
