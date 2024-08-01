@@ -2,16 +2,14 @@
 import { CgLayoutGrid } from "react-icons/cg";
 import { CiBookmark } from "react-icons/ci";
 
-const Blog = ({ blog }) => {
-    const Bijoyeni=()=>{
-        console.log('Bijoyeni is my cute bou')
-    }
-    console.log(blog)
+const Blog = ({ blog,handleAddtoBookmark }) => {
+    
+    console.log(handleAddtoBookmark)
     const { title, coverimg, authorimg, author, posted_date, readingtime, hashtags } = blog;
 
     return (
         <>
-            <div className="mb-20">
+            <div className="mb-20 ">
                 <div className="mb-8">
 
                     <img className="w-full rounded-md"  src={coverimg}/>
@@ -26,9 +24,9 @@ const Blog = ({ blog }) => {
                             </div>
                         </div>
 
-                        <div className="flex items-center gap-3">
+                        <div className="flex items-center ">
                             <span>{readingtime} min read</span>
-                            <button onClick={Bijoyeni}><CiBookmark /></button>
+                            <button onClick={handleAddtoBookmark} className="ml-2 text-red-400 text-2xl"><CiBookmark /></button>
                         </div>
                     </div>
                 </div>
