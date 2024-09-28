@@ -8,10 +8,18 @@ import Bookmarks from './components/bookmarks/Bookmarks'
 import { CgLayoutGrid } from 'react-icons/cg'
 
 function App() {
+  
   const[bookmark,setBookmark]=useState([]);
+  const[readingTime,setReadingTime]=useState(0)
   const handleAddtoBookmark=(blog)=>{
-    console.log('bookmark added');
+    console.log(blog)
+    const newBookMark=[...bookmark,blog];
+    setBookmark(newBookMark);
 
+  }
+  const handleMarkAsRead=(time)=>{
+    console.log('Mark As read',time)
+    setReadingTime(readingTime+time)
   }
  
 
@@ -20,8 +28,8 @@ function App() {
      <div className='max-w-7xl mx-auto'>
      <Header/>
      <div className='md:flex mx-auto'>
-     <Blogs handleAddtoBookmark={handleAddtoBookmark}/>
-     <Bookmarks/>
+     <Blogs handleAddtoBookmark={handleAddtoBookmark} handleMarkAsRead={handleMarkAsRead}/>
+     <Bookmarks readingTime={readingTime} bookmark={bookmark}/>
      </div>
      </div>
     </>
